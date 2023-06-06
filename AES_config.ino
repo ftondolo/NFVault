@@ -11,10 +11,11 @@ byte nuidPICC[4];
 // AES Initializations
 AES128 aes128;
 String password = "WHL0137-LS|march"; // REQUIRES MODIFICATION
-byte *plaintext = new byte[password.length()+1];
-byte *decryptedtext = new byte[password.length()];
-byte *cypher = new byte[password.length()];
-byte *key = new byte[password.length()];
+byte plaintext[17];
+byte decryptedtex[16];
+byte cypher[16];
+byte tmp_key[16];
+byte key[16];
 
 void setup(void) 
 {
@@ -32,13 +33,13 @@ void loop()
     uint8_t uid_len = tag.getUidLength();
     tag.getUid(key, uid_len);
     for (int i = 0; i<sizeof(key); i++){
-      key[i] = key[i%uid_len];
+      Serial.println(key[i],HEX);
     }
     aes128.setKey(key,password.length());
     bool verify = true;
     aes128.encryptBlock(cypher,plaintext);
    String out = String((char*)plaintext);
-   out = out.substring(0, sizeof(cypher));
+   out = out.substring(0, password.length());
    Serial.print("PLAINTEXT: ");
    Serial.println(out);
    Serial.print("CIPHERTEXT: ");
