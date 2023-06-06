@@ -19,9 +19,7 @@ byte decryptedtext[16];
 String out;
 
 int is_locked[1] = {1};
-// long int sleep_timeout = 120; // REQUIRES MODIFICATION
 long int last_login[1] = {0};
-// bool just_logged_in = false;
 
 void setup(void) {
   pinMode(LED_BUILTIN, OUTPUT);
@@ -50,7 +48,7 @@ void loop() {
               goto bail;
             }
             else{
-              goto next;
+              continue;
             }
           }
         }
@@ -69,7 +67,6 @@ void loop() {
           delay(500);
           Keyboard.println(out);
           is_locked[x] = 0;
-          //just_logged_in = true;
           last_login[x] = millis();
           Serial.print(last_login[x]/1000);
           Serial.println(")");
@@ -83,8 +80,7 @@ void loop() {
           Keyboard.print("q");
           Keyboard.releaseAll();
         }
-        next:
-        continue;
+        goto bail;
       }
     }
     bail:
