@@ -8,8 +8,8 @@ A Near-Field Communication (NFC) based authenticator
       <a href="#State of this Project">Prerequisites</a>
       <ul>
         <li><a href="#Goal">Goal</a></li>
-        <li><a href="#Current Functionality:">Current Functionality</a></li>
-        <li><a href="#To Implement:">To Implement:</a></li>
+        <li><a href="#Current Functionality">Current Functionality</a></li>
+        <li><a href="#To Implement">To Implement</a></li>
       </ul>
     </li>
     <li>
@@ -27,9 +27,9 @@ A Near-Field Communication (NFC) based authenticator
 ## State of this Project
 ### Goal
 I set out to create a small portable device which, upon recognising an NFC, could login to devices or sites in a rapid and secure manner. Most such Arduino-based solutions stored passowrds in plaintext, allowing for easy reading of the authentication data from the microcontroller, not to mention the overall inflexibility of most of these solutions with regards to password management.
-### Current Functionality:
+### Current Functionality
 At present, it is possible to use any number of different tag UIDs to type out any one of multiple passwords (albeit assuming the same general behaviour for LOG IN/OUT). Most importantly however, the passwords are sored encrypted with AES 128-bit encryption and as such are unreadable from the microcontroller code.
-### To Implement:
+### To Implement
 Need to allow for multiple log IN/OUT behaviour, permitting for use to authenticate both devices, websites, apps, etc.
 ## Usage
 ### Theory:
