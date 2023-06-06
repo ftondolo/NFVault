@@ -13,7 +13,7 @@ A Near-Field Communication (NFC) based authenticator
       </ul>
     </li>
     <li>
-      <a href="#Usage">Results</a>
+      <a href="#Usage">## Usage</a>
       <ul>
         <li><a href="#Theory">Theory</a></li>
       </ul>
