@@ -7,18 +7,18 @@ A Near-Field Communication (NFC) based authenticator
     <li>
       <a href="#State of this Project">Prerequisites</a>
       <ul>
-        <li><a href="#Goal">Install</a></li>
-        <li><a href="#Current Functionality:">Install</a></li>
-        <li><a href="#To Implement:">Install</a></li>
+        <li><a href="#Goal">Goal</a></li>
+        <li><a href="#Current Functionality:">Current Functionality</a></li>
+        <li><a href="#To Implement:">To Implement:</a></li>
       </ul>
     </li>
     <li>
       <a href="#Usage">Results</a>
       <ul>
-        <li><a href="#Theory:">Preface</a></li>
+        <li><a href="#Theory:">Theory:</a></li>
       </ul>
       <ul>
-        <li><a href="#Practice:">Trends</a></li>
+        <li><a href="#Practice:">Practice:</a></li>
       </ul>
     </li>
   </ol>
