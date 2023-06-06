@@ -15,10 +15,10 @@ A Near-Field Communication (NFC) based authenticator
     <li>
       <a href="#Usage">Results</a>
       <ul>
-        <li><a href="#Theory:">Theory:</a></li>
+        <li><a href="#Theory">Theory</a></li>
       </ul>
       <ul>
-        <li><a href="#Practice:">Practice:</a></li>
+        <li><a href="#Practice">Practice</a></li>
       </ul>
     </li>
   </ol>
@@ -32,8 +32,8 @@ At present, it is possible to use any number of different tag UIDs to type out a
 ### To Implement
 Need to allow for multiple log IN/OUT behaviour, permitting for use to authenticate both devices, websites, apps, etc.
 ## Usage
-### Theory:
+### Theory
 The theory behid the NFVault is quite simple: the arduino uses the tags' UIDs to decrypt the corresponding password cyphertexts stored on the Arduino and then types those passwords out acting as a pseudo-keyboard on the computer it is plugged into.
-### Practice:
+### Practice
 First, to create the cyphertext which the NFVault will store one runs AES_config on the hardware, after inserting one's password in the code, observing the serial output while reading different tags will output HEX cyphertext to be stored on the final device program.
 Then, you can add these newly generated cyphertextsto to the password 2-D array in the alpha.ino script, each row corresponding to a passowrd and each column to a 16-byte cyphertext of said password encrypted with a given tag's UID. When reading a tag the Arduino will loop through every password and attempt to decrypt every encryted variation thereof, if a decrypted text is all-ASCII, the corresponding plaintext is typed out! If the tag in question is tapped again, the prescibed log out script is then run. A sleep timeout is implemented but commented out, uncommeting said code will automatically assume a logout after the ```sleep_timeout``` in seconds (customisable).
