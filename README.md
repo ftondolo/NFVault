@@ -20,6 +20,9 @@ A Near-Field Communication (NFC) based authenticator
       <ul>
         <li><a href="#Practice">Practice</a></li>
       </ul>
+      <ul>
+        <li><a href="#Demo">Demo</a></li>
+      </ul>
     </li>
   </ol>
 </details>
@@ -38,3 +41,7 @@ The theory behid the NFVault is quite simple: the arduino uses the tags' UIDs to
 First, to create the cyphertext which the NFVault will store one runs ```AES_config.ino``` on the hardware, after inserting one's password in the code, observing the serial output while reading different tags will output HEX cyphertext to be stored on the final device program (```nfvault.ino```).
 
 Then, you can add these newly generated cyphertextsto to the password 3-D array in the ```nfvault.ino``` script, each row (X) corresponding to a passowrd and each column (Y) to a (Z) 16-byte cyphertext of said password encrypted with a given tag's UID. When reading a tag the Arduino will loop through every password and attempt to decrypt every encryted variation thereof, if a decrypted text is all-ASCII, the corresponding plaintext is typed out! If the tag in question is tapped again, the prescibed log out script is then run. A sleep timeout is implemented but commented out, uncommeting said code will automatically assume a logout after the ```sleep_timeout``` in seconds (customisable).
+
+### Demo
+https://github.com/ftondolo/NFVault/assets/51007153/e9810b9e-7486-4927-8764-767beecd6385
+
